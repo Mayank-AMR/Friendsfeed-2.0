@@ -85,7 +85,6 @@ class ConnectionLiveData(context: Context) : LiveData<Boolean>() {
             validNetworks.remove(network)
             checkValidNetworks()
         }
-
     }
 
 }
