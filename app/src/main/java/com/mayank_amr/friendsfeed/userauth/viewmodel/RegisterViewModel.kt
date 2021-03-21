@@ -1,4 +1,4 @@
-package com.mayank_amr.friendsfeed.userauth
+package com.mayank_amr.friendsfeed.userauth.viewmodel
 
 import androidx.lifecycle.ViewModel
 
