@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Friendsfeed</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_posts_to_view_message">Yoy haven\'t followed any person yet. Start following to see posts.</string>
+    <string name="navigation_drawer_view_menu_profile">Profile</string>
+    <string name="navigation_drawer_view_menu_login">Login</string>
+    <string name="navigation_drawer_view_menu_logout">Log out</string>
+    <string name="navigation_drawer_view_menu_connect">Connec</string>
+    <string name="navigation_drawer_view_menu_aboutus">About us</string>
+    <string name="navigation_drawer_view_menu_feedback">Feedback</string>
 </resources>

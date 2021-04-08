@@ -8,6 +8,10 @@ plugins {
 
     /*---------------*** Plugin to generate Kotlin code suitable for Kotlin-only modules ***------*/
     id "androidx.navigation.safeargs.kotlin"
+
+    /*---------------*** Plugin for extension function ***----------------------------------------*/
+    id "kotlin-android-extensions"
+
 }
 
 android {
@@ -45,8 +49,8 @@ android {
 
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     def nav_version = "2.3.4"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -63,9 +67,35 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
-    /*--------------------------*** Navigation  ***------------------------------------------------------*/
+    /*--------------------------*** Navigation  ***-----------------------------------------------*/
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    /*--------------------------*** Retrofit And GSON  ***----------------------------------------*/
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    /*--------------------------*** Kotlin Coroutine ***------------------------------------------*/
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
+
+    /*--------------------------*** Shared DataStore ***------------------------------------------*/
+    implementation 'androidx.datastore:datastore-preferences:1.0.0-alpha01'
+
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha07'
+
+    /*--------------------------*** Interceptor ***-----------------------------------------------*/
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
+
+    /*--------------------------*** Paging ***----------------------------------------------------*/
+    implementation "androidx.paging:paging-runtime-ktx:3.0.0-alpha02"
+
+    /*--------------------------*** Glide ***-----------------------------------------------------*/
+    implementation "com.github.bumptech.glide:glide:4.11.0"
+
+
+
+
 
 
 }

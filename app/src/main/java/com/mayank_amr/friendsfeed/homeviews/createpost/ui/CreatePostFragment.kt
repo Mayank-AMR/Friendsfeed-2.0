@@ -1,4 +1,4 @@
-package com.mayank_amr.friendsfeed.home
+package com.mayank_amr.friendsfeed.homeviews.createpost.ui
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,25 +7,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.mayank_amr.friendsfeed.R
+import com.mayank_amr.friendsfeed.homeviews.createpost.viewmodel.CreatePostViewModel
 
-class HomeFragment : Fragment() {
+class CreatePostFragment : Fragment() {
 
     companion object {
-        fun newInstance() = HomeFragment()
+        fun newInstance() = CreatePostFragment()
     }
 
-    private lateinit var viewModel: HomeViewModel
+    private lateinit var viewModel: CreatePostViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.home_fragment, container, false)
+        return inflater.inflate(R.layout.create_post_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(CreatePostViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

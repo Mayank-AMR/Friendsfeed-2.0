@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="post"
+            type="com.mayank_amr.friendsfeed.homeviews.home.data.PostsResponse.Message" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/rectangle_top_round_corner"
+
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@color/gray_200"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/user_pic_iv"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_gravity="center_vertical"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:srcCompat="@drawable/ic_person" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/user_full_name_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:hint="Full Name"
+                        android:maxLines="1"
+                        android:padding="4dp"
+                        android:text="@{post.User.name.toString()}"
+                        android:textColor="@color/gray_700"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/user_name_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="4dp"
+                        android:text="@{post.User.username.toString()}"
+                        android:textColor="@color/gray_500"
+                        android:textSize="16sp"
+                        tool:hint="user_name" />
+                </LinearLayout>
+
+                <!--Button for share or forward post-->
+                <ImageButton
+                    android:id="@+id/button_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_share"
+                    android:backgroundTint="@color/gray_700" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--        <com.google.android.material.card.MaterialCardView-->
+        <!--            android:id="@+id/post_Image_container_cv"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent">-->
+
+        <ImageView
+            android:id="@+id/post_image_iv"
+            android:layout_width="match_parent"
+            android:layout_height="350dp" />
+
+        <!--        </com.google.android.material.card.MaterialCardView>-->
+
+        <!--                TextView for Post description-->
+        <TextView
+            android:id="@+id/post_description_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:padding="2dp"
+            android:text="@{post.post}"
+            android:textSize="16sp"
+            tool:hint="Post description." />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_700" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_100"
+
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/button_liks"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@{String.valueOf(post.likes_count)}"
+                android:textColor="@color/gray_500"
+                app:icon="@drawable/ic_favorite"
+                app:iconPadding="0dp"
+                app:iconTint="@color/gray_700"
+                tool:hint="999" />
+
+            <Button
+                android:id="@+id/button_comments"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@{String.valueOf(post.comments_count)}"
+                android:textColor="@color/gray_500"
+                app:icon="@drawable/ic_comment"
+                app:iconPadding="0dp"
+                app:iconTint="@color/gray_700"
+                tool:hint="999" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_700" />
+
+    </LinearLayout>
+</layout>
